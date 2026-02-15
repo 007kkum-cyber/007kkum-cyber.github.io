@@ -104,8 +104,8 @@ h2 {
 }
 
 .hero {
-    /* Background Image: Study with Sea View */
-    background: url('assets/study_sea_view.jpg') no-repeat center center/cover;
+    /* Background Image: Pastor's Study (Classic Library) */
+    background: url('assets/pastor_study.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     z-index: 1;

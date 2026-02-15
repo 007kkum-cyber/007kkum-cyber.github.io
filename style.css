@@ -103,12 +103,74 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.hero {
-    /* Background Image: Pastor's Study (Classic Library) */
-    background: url('assets/pastor_study.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+/* Hero Section (User Design) */
+.hero-section {
     position: relative;
-    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using local image instead of unstable source.unsplash.com */
+    background-image: url('assets/pastor_study.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    max-width: 800px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+}
+
+.hero-content a {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content a:hover {
+    background-color: #388E3C;
 }
 
 .hero::after {
@@ -123,24 +185,7 @@ h2 {
     z-index: -1;
 }
 
-.hero-content {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.highlight {
-    color: var(--primary-color);
-}
+/* Removed old .hero-content styles in favor of new one */
 
 .btn {
     display: inline-block;

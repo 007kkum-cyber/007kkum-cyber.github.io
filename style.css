@@ -104,10 +104,17 @@ h2 {
 }
 
 .hero {
-    background-color: #1a1a2e;
-    /* Fallback color */
-    background: url('assets/sky_clouds.jpg') no-repeat center center/cover;
-    background-attachment: fixed;
+    /* Wood Panel Background for Pastor's Study */
+    background-color: #3e2723;
+    background-image:
+        /* Warm Lamp Light Effect */
+        radial-gradient(circle at 50% 40%, rgba(255, 230, 180, 0.15) 0%, rgba(0, 0, 0, 0.6) 80%),
+        /* Vertical Wood Panels */
+        repeating-linear-gradient(90deg,
+            #4e342e 0px,
+            #4e342e 100px,
+            #3e2723 100px,
+            #3e2723 105px);
     position: relative;
     z-index: 1;
 }

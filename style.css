@@ -106,7 +106,7 @@ h2 {
 .hero {
     background-color: #1a1a2e;
     /* Fallback color */
-    background: url('assets/room_with_sea_view.png') no-repeat center center/cover;
+    background: url('assets/ulsan_covenant_church_catechism.png') no-repeat center center/cover;
     background-attachment: fixed;
     position: relative;
     z-index: 1;

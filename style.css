@@ -104,17 +104,9 @@ h2 {
 }
 
 .hero {
-    /* Wood Panel Background for Pastor's Study */
-    background-color: #3e2723;
-    background-image:
-        /* Warm Lamp Light Effect */
-        radial-gradient(circle at 50% 40%, rgba(255, 230, 180, 0.15) 0%, rgba(0, 0, 0, 0.6) 80%),
-        /* Vertical Wood Panels */
-        repeating-linear-gradient(90deg,
-            #4e342e 0px,
-            #4e342e 100px,
-            #3e2723 100px,
-            #3e2723 105px);
+    /* Background Image: Study with Sea View */
+    background: url('assets/study_sea_view.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
     position: relative;
     z-index: 1;
 }

@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { books } from '../data/books';
 
-const shelf1 = books.filter((_, i) => i < 4);
-const shelf2 = books.filter((_, i) => i >= 4 && i < 8);
-const shelf3 = books.filter((_, i) => i >= 8);
+const shelf1 = books.filter((_, i) => i < 6);
+const shelf2 = books.filter((_, i) => i >= 6);
 
 function BookSpine({ book, index }) {
     const [isHovered, setIsHovered] = useState(false);
@@ -148,9 +147,8 @@ export default function LibraryPage() {
 
                 {/* 3. 책장 섹션 */}
                 <div className="grid grid-cols-1 gap-16">
-                    <Shelf books={shelf1} label="신학 · 강요" />
-                    <Shelf books={shelf2} label="설교 · 서신" />
-                    <Shelf books={shelf3} label="철학 · 교회" />
+                    <Shelf books={shelf1} label="신학 · 철학 · 설교" />
+                    <Shelf books={shelf2} label="성경 · 인문 · 교회" />
                 </div>
 
                 {/* 하단 버튼 */}

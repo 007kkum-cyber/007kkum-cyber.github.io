@@ -155,18 +155,18 @@ export default function LibraryPage() {
                 </div>
 
                 {/* 하단 버튼 */}
-                <div className="mt-20 flex justify-center">
-                    <button className="group relative px-10 py-4 bg-stone-900/60 hover:bg-stone-800/80 
+                <div className="mt-20 flex justify-center gap-6">
+                    <Link to="/stories" className="group relative px-10 py-4 bg-stone-900/60 hover:bg-stone-800/80 
                            text-white border border-stone-500/40 hover:border-amber-500/40
                            backdrop-blur-xl transition-all duration-500 rounded-sm shadow-2xl
                            overflow-hidden">
                         <span className="relative z-10 text-sm tracking-widest uppercase font-light">
-                            서평 전체 보기
+                            이야기 보기
                         </span>
                         {/* 호버 시 빛 효과 */}
                         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/0 via-amber-500/10 to-amber-500/0 
                            translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                    </button>
+                    </Link>
                 </div>
             </div>
 

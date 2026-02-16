@@ -22,3 +22,7 @@ npm-debug.log*
 
 # Vercel
 .vercel
+
+# Database
+*.db
+*.db-journal

@@ -8,8 +8,7 @@ const shelf3 = books.filter((_, i) => i >= 8);
 
 function BookSpine({ book, index }) {
     const [isHovered, setIsHovered] = useState(false);
-    const heights = ['h-40 md:h-48', 'h-44 md:h-52', 'h-38 md:h-46', 'h-42 md:h-50', 'h-40 md:h-48'];
-    const height = heights[index % heights.length];
+    const height = 'h-44 md:h-52';
 
     return (
         <Link

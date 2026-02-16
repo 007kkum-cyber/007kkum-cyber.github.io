@@ -59,7 +59,7 @@ function BookSpine({ book, index }) {
     );
 }
 
-function Shelf({ books, label }) {
+function Shelf({ books, label, children }) {
     return (
         <div className="relative">
             <h2 className="text-stone-400 text-sm font-semibold mb-3 ml-2 uppercase tracking-widest">
@@ -71,6 +71,9 @@ function Shelf({ books, label }) {
                 {books.map((book, index) => (
                     <BookSpine key={book.id} book={book} index={index} />
                 ))}
+
+                {/* 커스텀 아이템 (예: 이야기 보기) */}
+                {children}
                 {/* 북엔드 장식 */}
                 <div className="w-3 h-32 md:h-40 bg-gradient-to-b from-stone-600 to-stone-800 rounded-t-sm ml-1 shadow-lg"></div>
             </div>
@@ -126,6 +129,8 @@ export default function LibraryPage() {
                 ))}
             </div>
 
+
+
             {/* 2. 콘텐츠 레이어 */}
             <div className="z-10 w-full max-w-4xl px-6 md:px-10 py-16">
 
@@ -146,25 +151,46 @@ export default function LibraryPage() {
                 </div>
 
                 {/* 3. 책장 섹션 */}
+                {/* 3. 책장 섹션 */}
                 <div className="grid grid-cols-1 gap-16">
-                    <Shelf books={shelf1} label="신학 · 철학 · 설교" />
+                    <Shelf books={shelf1} label="신학 · 철학 · 설교">
+                        {/* 이야기 보기 (책장에 꽂힌 형태) */}
+                        <Link to="/stories" className="relative group cursor-pointer block ml-1">
+                            {/* 말풍선 툴팁 */}
+                            <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-amber-500/95 backdrop-blur-sm text-white 
+                                       text-xs font-medium px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-30
+                                       opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:-translate-y-1 transition-all duration-300 pointer-events-none">
+                                이야기 모음
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 
+                                        border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent 
+                                        border-t-[5px] border-t-amber-500/95"></div>
+                            </div>
+
+                            <div className="relative w-8 md:w-10 h-40 md:h-48 rounded-t-sm 
+                                   bg-stone-800
+                                   shadow-[4px_0_12px_rgba(0,0,0,0.5),-2px_0_6px_rgba(0,0,0,0.3)]
+                                   transition-all duration-500 ease-out
+                                   group-hover:-translate-y-4 group-hover:rotate-[2deg] group-hover:shadow-[4px_8px_24px_rgba(0,0,0,0.6)]
+                                   border-r border-white/10
+                                   flex items-center justify-center overflow-hidden">
+
+                                {/* 텍스트 */}
+                                <span className="[writing-mode:vertical-rl] text-amber-500/90 text-[11px] md:text-sm font-semibold 
+                                         tracking-widest group-hover:text-amber-400 transition-colors duration-300">
+                                    STORIES
+                                </span>
+
+                                {/* 장식 */}
+                                <div className="absolute top-2 left-1 right-1 h-[1px] bg-white/10"></div>
+                                <div className="absolute bottom-2 left-1 right-1 h-[1px] bg-white/10"></div>
+                            </div>
+                        </Link>
+                    </Shelf>
                     <Shelf books={shelf2} label="성경 · 인문 · 교회" />
                 </div>
 
                 {/* 하단 버튼 */}
-                <div className="mt-20 flex justify-center gap-6">
-                    <Link to="/stories" className="group relative px-10 py-4 bg-stone-900/60 hover:bg-stone-800/80 
-                           text-white border border-stone-500/40 hover:border-amber-500/40
-                           backdrop-blur-xl transition-all duration-500 rounded-sm shadow-2xl
-                           overflow-hidden">
-                        <span className="relative z-10 text-sm tracking-widest uppercase font-light">
-                            이야기 보기
-                        </span>
-                        {/* 호버 시 빛 효과 */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/0 via-amber-500/10 to-amber-500/0 
-                           translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                    </Link>
-                </div>
+
             </div>
 
             {/* 실내 조명 오버레이 */}

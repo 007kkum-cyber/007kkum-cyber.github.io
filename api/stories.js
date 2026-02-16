@@ -14,12 +14,13 @@ export default async function handler(req, res) {
             res.status(500).json({ error: 'Failed to fetch stories' });
         }
     } else if (req.method === 'POST') {
-        const { title, content } = req.body;
+        const { title, content, imageUrl } = req.body;
         try {
             const story = await prisma.story.create({
                 data: {
                     title,
                     content,
+                    imageUrl,
                 },
             });
             res.status(201).json(story);

@@ -59,16 +59,28 @@ export default function StoryListPage() {
 
                 <div className="grid gap-6">
                     {stories.map((story) => (
-                        <article key={story.id} className="group relative p-8 bg-stone-900/40 backdrop-blur-sm border border-stone-800/60 rounded-xl hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-                            <h2 className="text-xl md:text-2xl font-serif font-bold mb-3 text-stone-100 group-hover:text-amber-200 transition-colors">
-                                {story.title}
-                            </h2>
-                            <p className="text-stone-400 leading-relaxed mb-4 line-clamp-3 font-light text-sm md:text-base">
-                                {story.content}
-                            </p>
-                            <div className="flex items-center gap-4 text-xs text-stone-600 font-mono">
-                                <span>{new Date(story.createdAt).toLocaleDateString()}</span>
-                                <div className="h-[1px] flex-1 bg-stone-800"></div>
+                        <article key={story.id} className="group relative bg-stone-900/40 backdrop-blur-sm border border-stone-800/60 rounded-xl hover:border-amber-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl overflow-hidden">
+                            {story.imageUrl && (
+                                <div className="w-full h-48 md:h-64 overflow-hidden">
+                                    <img
+                                        src={story.imageUrl}
+                                        alt={story.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
+                            )}
+                            <div className="p-8">
+                                <h2 className="text-xl md:text-2xl font-serif font-bold mb-3 text-stone-100 group-hover:text-amber-200 transition-colors">
+                                    {story.title}
+                                </h2>
+                                <div
+                                    className="text-stone-400 leading-relaxed mb-6 font-light text-sm md:text-base prose prose-invert prose-stone max-w-none"
+                                    dangerouslySetInnerHTML={{ __html: story.content }}
+                                />
+                                <div className="flex items-center gap-4 text-xs text-stone-600 font-mono">
+                                    <span>{new Date(story.createdAt).toLocaleDateString()}</span>
+                                    <div className="h-[1px] flex-1 bg-stone-800"></div>
+                                </div>
                             </div>
                         </article>
                     ))}
